@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+var url = prompt('请输入第一集下载网址');			//输入第一集网址
+var Chapter = parseFloat(prompt('请输入总章节数'));	//输入小说总章节数
+var url = url.slice(0, url.length - 7);			//获取网址前缀
+
+var number = new Array();						//按照网站计数方式写了个数组
+for (var i = 0; i < 10; i++) {
+	number.push('00' + i);
+}
+for (var i = 10; i < 100; i++) {
+	number.push('0' + i);
+}
+for (var i = 100; i < 1000; i++) {
+	number.push(i);
+}
+for (var i = 1000; i < 10000; i++) {
+	number.push(i);
+}
+for(i=1;i<=Chapter;i++){							//生成下载链接
+	document.write(url + number[i] + '.mp3' + '<br/>');
+}
+
+</script>
+</body>
+</html>
